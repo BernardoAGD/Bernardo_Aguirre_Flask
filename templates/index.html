@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block titulo %}Menú principal{% endblock %}
+
+{% block contenido %}
+<div class="inicio">
+<div class="menu">
+    <a class="boton boton-menu" href="{{ url_for('ejercicio1') }}">Ejercicio 1</a>
+    <a class="boton boton-menu" href="{{ url_for('ejercicio2') }}">Ejercicio 2</a>
+</div>
+{% if total_registros %}
+<form class="limpiar" method="POST" action="{{ url_for('limpiar_historial') }}">
+    <button type="submit">Limpiar historial ({{ total_registros }} registros)</button>
+</form>
+{% endif %}
+</div>
+{% endblock %}
